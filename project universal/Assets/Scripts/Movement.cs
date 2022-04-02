@@ -5,15 +5,25 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float movementSpeed;
+    [SerializeField] float mouseSensitivity;
     void Start()
     {
         
     }
-    void Update() {
+    void Update() 
+    {
+        Move();
+        MouseRotation();
+    }
+    private void Move() {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector3 moveDirection = new Vector3(moveHorizontal, 0, moveVertical);
         moveDirection.Normalize();
         transform.Translate(moveDirection * movementSpeed * Time.deltaTime);
+    }
+    private void MouseRotation() {
+        transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * mouseSensitivity);
+        //add vertical mouse rotation
     }
 }
