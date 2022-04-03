@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class collectable : MonoBehaviour {
     public static int totalCoins = 0;
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Player") {
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player") {
             AddCoin();
-        }
         Destroy(gameObject);
-        Debug.Log("You now have " + collectable.totalCoins +" dragon balls.");
+        }
+        Debug.Log("You now have " + collectable.totalCoins + " dragon balls.");
     }
     private void AddCoin() {
         totalCoins++;
