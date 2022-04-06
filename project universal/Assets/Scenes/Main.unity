@@ -859,7 +859,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4294004, y: 1}
+    m_SensorSize: {x: 1.2682927, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1023,7 +1023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdd120cd9f78da44ae1094f4607db48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3.3
+  movementSpeed: 3
+  runningSpeed: 6
+  normalSpeed: 3
   mouseSensitivity: 250
 --- !u!4 &1385473148 stripped
 Transform:
@@ -1173,7 +1175,7 @@ MonoBehaviour:
   collectableToSpawn: {fileID: 583764316384049728, guid: 5d995a0b6a55af1499b0dcbec81a393f, type: 3}
   spawnDelay: 2
   destroyDelay: 5
-  collectableDestroyDelay: 15
+  particles: {fileID: 0}
 --- !u!65 &1560760810
 BoxCollider:
   m_ObjectHideFlags: 0

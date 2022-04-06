@@ -9,7 +9,7 @@ public class collectable : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player") {
             AddCoin();
-        Destroy(gameObject);
+            Destroy(gameObject);
         }
         Debug.Log("You now have " + collectable.totalCoins + " dragon balls.");
     }

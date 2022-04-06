@@ -18,6 +18,7 @@ public class animations : MonoBehaviour
         walkBack();
         walkRight();
         walkLeft();
+        runForward();
     }
     private void walkForward() {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
@@ -41,5 +42,9 @@ public class animations : MonoBehaviour
             anima.SetBool("isWalkingLeft", true);
         } else anima.SetBool("isWalkingLeft", false);
     }
-    
+    private void runForward() {
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W)) {
+            anima.SetBool("isRunPressed", true);
+        } else anima.SetBool("isRunPressed", false);
+    }
 }

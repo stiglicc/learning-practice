@@ -5,7 +5,11 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float movementSpeed;
+    [SerializeField] float runningSpeed;
+    [SerializeField] float normalSpeed;
+
     [SerializeField] float mouseSensitivity;
+
     void Start()
     {
         
@@ -14,6 +18,13 @@ public class Movement : MonoBehaviour
     {
         Move();
         MouseRotation();
+        runForward();
+    }
+    private void runForward()
+    {
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            movementSpeed = runningSpeed;
+        } else movementSpeed = normalSpeed; 
     }
     private void Move() {
         float moveHorizontal = Input.GetAxis("Horizontal");
